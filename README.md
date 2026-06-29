@@ -6,7 +6,7 @@
 
 **1. 配置 API Key**
 
-在 Claude Code 的 `settings.json`（`~/.claude/settings.json`）中设置环境变量：
+在 Claude Code 的 `settings.local.json`（`~/.claude/settings.local.json`）中设置环境变量：
 
 ```json
 {
@@ -17,6 +17,8 @@
 ```
 
 `config.yaml` 通过 `${IMAGE_API_KEY}` 引用，不会存明文。
+这里的API key用的是siliconflow的海外版，主要是生图用，是我能找到质量还行最便宜的API了，0.005美元一张。
+注意这里是siliconflow的海外版，不是国内版，国内版会更贵！
 
 **2. 安装依赖**
 
@@ -45,7 +47,7 @@ setup.bat
 |------|------|------|
 | Python 3.10+ | ✅ | 推荐 3.12 |
 | ffmpeg | ✅ | 添加到 PATH，`ffmpeg -version` 验证 |
-| SiliconFlow API Key | ✅ | [cloud.siliconflow.cn](https://cloud.siliconflow.cn) 注册获取 |
+| SiliconFlow API Key | ✅ | [cloud.siliconflow.com](https://cloud.siliconflow.com) 注册获取 |
 | CosyVoice 模型 ~5.3GB | 可选 | 仅本地配音需要，云端配音无需 |
 
 ---
