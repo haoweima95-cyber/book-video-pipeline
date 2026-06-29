@@ -1,0 +1,17 @@
+# 用户本地配置（不提交到 git）
+config.yaml
+__pycache__/
+*.pyc
+__pycache__
+*.egg-info/
+*.log
+voice_output/
+output/
+images/
+images_video/
+segments/
+*.mp4
+*.wav
+*.png
+*.ass
+*.srt

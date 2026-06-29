@@ -1,0 +1,78 @@
+# Book Video Pipeline 配置
+# 首次运行初始化向导时会自动生成 config.yaml。
+
+# ── 路径 ──
+paths:
+  # CosyVoice 代码仓库路径（本地 TTS 使用）
+  cosyvoice_repo: "~\\AppData\\Local\\CosyVoice"
+  # Matcha-TTS 代码仓库路径（本地 TTS 声码器依赖）
+  matcha_tts_repo: "~\\AppData\\Local\\Matcha-TTS"
+  # CosyVoice2-0.5B 模型目录
+  cosyvoice_model: "~\\.cache\\modelscope\\iic\\CosyVoice2-0___5B"
+  # 音色存储目录
+  voice_storage: "~\\.cosyvoice\\voices"
+  # 字幕字体路径
+  font_path: "C:\\Windows\\Fonts\\simhei.ttf"
+  # 项目输出根目录
+  output_dir: "D:\\自媒体\\视频导出"
+  # 项目工作目录
+  project_root: "D:\\自媒体"
+  # 知识库路径
+  knowledge_base: "~\\kb\\book-scripts"
+
+# ── 生图 API ──
+image:
+  # 生图提供商：siliconflow（硅基流动）、openai_compatible（任何 OpenAI 兼容 API）、local（本地模型）
+  provider: "siliconflow"
+  # 生图模型名称
+  model: "Tongyi-MAI/Z-Image-Turbo"
+  # API Base URL：国内用户用 https://api.siliconflow.cn/v1，海外用户用 https://api.siliconflow.com/v1（生图更便宜）
+  base_url: "https://api.siliconflow.com/v1"
+  # API Key（优先读环境变量 IMAGE_API_KEY，其次读此处）
+  api_key: "${IMAGE_API_KEY}"
+  # 默认画面尺寸
+  default_size: "1024x1024"
+  # 硅基流动地区：cn（国内）/ com（海外），不影响功能，仅作标识
+  region: "com"
+
+# ── TTS 配音 ──
+tts:
+  # provider: "cloud" (硅基流动 API) 或 "local" (本地 CosyVoice)
+  provider: "cloud"
+  # 云端 API（仅 provider=cloud）
+  cloud:
+    # API 提供商：siliconflow、openai_compatible
+    api_provider: "siliconflow"
+    # 国内: api.siliconflow.cn/v1, 海外: api.siliconflow.com/v1
+    base_url: "https://api.siliconflow.com/v1"
+    api_key: "${IMAGE_API_KEY}"
+    # 云端音色
+    voice: "FunAudioLLM/CosyVoice2-0.5B:alex"
+  # 本地 CosyVoice（仅 provider=local）
+  local:
+    voice: "默认音色"
+  # 语速
+  speed: 1.1
+
+# ── 视频参数 ──
+video:
+  segment_duration: 10
+  resolution: "1920x1080"
+  zoom_speed: 1.0
+  codec: "libx264"
+  crf: 22
+  preset: "fast"
+  audio_codec: "aac"
+  audio_bitrate: "192k"
+
+# ── 字幕参数 ──
+subtitle:
+  font_name: "SimHei"
+  font_size: 50
+  font_bold: true
+  outline_width: 3
+  outline_color: "&H00000000"
+  shadow: 0
+  alignment: 2
+  margin_v: 80
+  chars_per_line: 25
