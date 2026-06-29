@@ -35,7 +35,7 @@ setup.bat
 
 **4. 知识库（script-gen 依赖）**
 
-`/script-gen` 需要 `~/kb/book-scripts/` 知识库才能生成高质量文案。没有的话联系作者获取，或用其他方式提供文案 txt。
+`/script-gen` 需要 `~/kb/book-scripts/` 知识库才能生成高质量文案。内置参考文案在/seed/kb/raw文件夹内，如果需要生成别的风格的文案，可以自行替换里面的参考文案。
 
 ---
 
