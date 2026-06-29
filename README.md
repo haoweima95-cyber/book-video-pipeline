@@ -11,7 +11,7 @@
 ```json
 {
   "env": {
-    "IMAGE_API_KEY": "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    "IMAGE_API_KEY": "sk-your-key-here"
   }
 }
 ```
